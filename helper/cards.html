@@ -1,0 +1,224 @@
+<header class="container-fluid p-2 text-center bg-light">
+    <h1><i class="ui-icon ui-icon-share"></i>  Share Your Passion, Teach on Clazgate!</h1>
+</header>
+
+<main class="container py-4">
+    <section class="row">
+        <div class="container">
+            <h1>Video Solutions to GCE Past Questions</h1>
+            <div class="row" id="course-container">
+                <!-- Course cards will be dynamically added here -->
+            </div>
+        </div>
+        
+        <script>
+            /*                    Replace with Category Name                        */
+            const apiUrl = "https://api.clazgate.com/courses/api/category_by_slug_courses/?category_name=Chemistry";
+            
+            fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const courseContainer = document.getElementById('course-container');
+                
+                data.forEach(course => {
+                    // Modified thumbnail URL
+                    const thumbnailURL = "https://" + course.thumbnail.substring(11);
+                    
+                    const card = document.createElement('div');
+                    card.className = 'col-md-4';
+                    card.innerHTML = `
+                          <div class="card">
+                              <img src="${thumbnailURL}" class="card-img-top" alt="${course.title}">
+                              <div class="card-body">
+                                  <h5 class="card-title">${course.title}</h5>
+                                  ${course.offer_price ? `<p class="card-text"><small class="text-muted">Price: <del>${course.price}</del> ${course.offer_price}</small></p>` : course.price ? `<p class="card-text"><small class="text-muted">Price: ${course.price}</big></p>` : '<p class="card-text"><small class="text-muted">Free</bigl></p>'}
+                                  <p class="card-text"><small class="text-muted">Instructor: ${course.instructor_name}</small></p>
+                                  <a href="#" class="btn btn-success">View Course</a>
+                              </div>
+                          </div>
+                      `;
+                    courseContainer.appendChild(card);
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+                document.getElementById('course-container').innerHTML = '<p>Error loading courses.</p>';
+            });
+        </script>
+        <div class="col-md-4">
+            <img src="https://clazgate.com/static/assets/img/favicon.ico" alt="Clazgate Logo" class="img-fluid rounded">
+        </div>
+        <div>
+            
+            <!-- Start of this section is from arrange.py output-->
+            <div >
+                <h1><i class="fas fa-file-download"></i> Chemistry Past Papers</h1>
+                
+                <div class="year-section">
+                    <h2><i class="fas fa-calendar-alt"></i> 2024</h2>
+                    <ul class="file-list">
+                        
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> AL-2024-Chemistry-P1.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/AL-2024-Chemistry-P1.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> AL-2024-Chemistry-P2.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/AL-2024-Chemistry-P2.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="year-section">
+                    <h2><i class="fas fa-calendar-alt"></i> 2023</h2>
+                    <ul class="file-list">
+                        
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> AL-2023-Chemistry-P1.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/AL-2023-Chemistry-P1.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> AL-2023-Chemistry-P2.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/AL-2023-Chemistry-P2.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="year-section">
+                    <h2><i class="fas fa-calendar-alt"></i> 2022</h2>
+                    <ul class="file-list">
+                        
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> AL-2022-Chemistry-P1.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/AL-2022-Chemistry-P1.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> AL-2022-Chemistry-P2.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/AL-2022-Chemistry-P2.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="year-section">
+                    <h2><i class="fas fa-calendar-alt"></i> 2021</h2>
+                    <ul class="file-list">
+                        
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> Al-chemistry-2021-P2.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/Al-chemistry-2021-P2.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> Al-chemistry-2021-P1.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/Al-chemistry-2021-P1.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="year-section">
+                    <h2><i class="fas fa-calendar-alt"></i> 2020</h2>
+                    <ul class="file-list">
+                        
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> AL-2020-Chemistry-P2.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/AL-2020-Chemistry-P2.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> AL-2020-Chemistry-P1.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/AL-2020-Chemistry-P1.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="year-section">
+                    <h2><i class="fas fa-calendar-alt"></i> 2018</h2>
+                    <ul class="file-list">
+                        
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> JUNE-2018-AL-CHEMISTRY-P2.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/JUNE-2018-AL-CHEMISTRY-P2.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> JUNE-2018-AL-CHEMISTRY-P1.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/JUNE-2018-AL-CHEMISTRY-P1.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="year-section">
+                    <h2><i class="fas fa-calendar-alt"></i> 2017</h2>
+                    <ul class="file-list">
+                        
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> Al-Chemistry-2017-P1.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/Al-Chemistry-2017-P1.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="year-section">
+                    <h2><i class="fas fa-calendar-alt"></i> 2016</h2>
+                    <ul class="file-list">
+                        
+                        <li class="file-item">
+                            <span><i class="fas fa-file-pdf text-danger"></i> Al-Chemistry-2016-P1.pdf</span>
+                            <a href="https://raw.githubusercontent.com/Hisles-Inc/clazgate/gh-pages/pdfs/papers/cameroon/gce/gce-a/chemistry/Al-Chemistry-2016-P1.pdf" download class="btn btn-primary btn-sm download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            <!-- End of this section is from arrange.py output-->
+
+        </div>
+        
+        <div >
+            <h2>Empower Learners, Build Your Legacy</h2>
+            <p>Are you passionate about a subject? Do you have a unique perspective to share? Clazgate, a global online learning platform, is seeking passionate instructors like you to join our vibrant community!</p>
+            <p>By teaching on Clazgate, you have the opportunity to:</p>
+            <ul>
+                <li><b>Impact millions of learners</b> worldwide who are eager to expand their knowledge and skills.</li>
+                <li><i>Craft and share your expertise</i> by creating engaging online courses on any topic.</li>
+                <li><b>Earn income</b> by sharing your passion and helping others achieve their goals.</li>
+            </ul>
+        </div>
+        
+    </section>
+    
+    <hr>
+    
+    <section class="row">
+        <div class="col-md-12 text-center">
+            <h2>Calling All Chemistry Gurus!</h2>
+            <p>Clazgate is excited to announce a growing selection of resources to help students excel in their GCE Chemistry exams. This includes a comprehensive collection of <b>past Chemistry GCE exam questions and answers</b>, providing invaluable insights into exam format and expectations.</p>
+            <p>If you possess a strong understanding of Chemistry and a passion for helping students succeed, we encourage you to develop a course on Clazgate. Your expertise can equip students with the knowledge and confidence they need to ace their GCE exams!</p>
+        </div>
+    </section>
+</main>
